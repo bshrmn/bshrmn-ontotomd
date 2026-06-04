@@ -1,5 +1,3 @@
-# TODO Move this into a notebook for easier exploration
-
 import os
 from owlready2 import *
 
@@ -61,11 +59,15 @@ def _normalize_value(value) -> str:
         raise ValueError(f"Unhandled value type {type(value)} with value {value}")
 
  # TODO cardinality may also need to be considered in the future
-def _expand_restriction_txt(restriction: Restriction) -> str:
-    property_txt = _create_link(_normalize_class_name(restriction.property))
+def _get_restriction_triple(restriction: Restriction) -> tuple[str, str, str]:
+    property_txt = _normalize_class_name(restriction.property)
     type_txt = restriction_type_to_text.get(restriction.type, "UNKNOWN")
     value_txt = _normalize_value(restriction.value)
 
+    return (property_txt, type_txt, value_txt)
+
+def _expand_restriction_txt(restriction: Restriction) -> str:
+    (property_txt, type_txt, value_txt) = _get_restriction_triple(restriction)
     return f"{property_txt} {type_txt} {value_txt}"
 
 if __name__ == "__main__":
@@ -81,11 +83,21 @@ if __name__ == "__main__":
     for i in onto.classes():
         i : ThingClass
         print(f"Class : {i} : {i.label.first() or i.name}")
-        # print(i.name)
+
+        # Track property restrictions listed under subClassOf
+        property_map = {}
+
         parent_classes : CallbackList = i.is_a
         for parent in parent_classes:
             if isinstance(parent, Restriction):
-                print(f"Restriction on property : {_expand_restriction_txt(parent)}")
+                # print(f"Restriction on property : {_expand_restriction_txt(parent)}")
+
+                # Track property restrictions and use later when printing properties
+                (property_name, property_type, property_value) = _get_restriction_triple(parent)
+                if property_name not in property_map:
+                    property_map[property_name] = []
+                
+                property_map[property_name].append(f"{property_type} {property_value}")
             elif isinstance(parent, And):
                 print(f"Intersection of : {parent.Classes}")
             elif isinstance(parent, Or): # TODO generated - needs to be tested
@@ -100,6 +112,9 @@ if __name__ == "__main__":
                 print(f"Constrained Datatype : {parent.datatype} with constraints {parent.constraints}")
             else:
                 print(f"Parent : {parent} : {parent.label.first() or parent.name}")
+        
+        # Check what properties we found through restrictions
+        # print(property_map)
 
         properties : set[PropertyClass] = i.get_class_properties()
         has_definition = False
@@ -107,9 +122,14 @@ if __name__ == "__main__":
             if prop == definition_property:
                 has_definition = True
                 continue
+
+            # Skip properties that were already processed through restrictions
+            if _normalize_class_name(prop) in property_map:
+                continue
             
+            property_name = _normalize_class_name(prop)
+
             if isinstance(prop, PropertyClass):
-                # TODO Fix this to handle the values better
                 prop_value = prop[i]
                 # TODO This should probably be an option for a specific language
                 # prop_value = prop_value.get_lang("all") or prop_value
@@ -121,19 +141,53 @@ if __name__ == "__main__":
                         continue
                     else:
                         # Normalize value list elements
-                        prop_value = [_normalize_value(v) for v in prop_value]
-                        print(f"Property : {prop} : {_normalize_class_name(prop)} : {prop_value}")
+                        # prop_value = [_normalize_value(v) for v in prop_value]
+                        # print(f"Property : {prop} : {_create_link(_normalize_class_name(prop))} : {prop_value}")
+
+                        property_map[property_name] = []
+
+                        for v in prop_value:
+                            property_map[property_name].append(_normalize_value(v))
                 else:
                     # Assuming that this is either a single value or logical construct
-                    print(f"Property: {prop} : {_normalize_class_name(prop)} : {_normalize_value(prop_value)}")
-                    1/0
+                    # print(f"Property: {prop} : {_create_link(_normalize_class_name(prop))} : {_normalize_value(prop_value)}")
+
+                    property_map[property_name] = []
+                    property_map[property_name].append(_normalize_value(prop_value))
+
+                    1/0 # TODO remove after testing to see if it should occur
             elif isinstance(prop, Inverse):
-                print(f"Property : Inverse of {_create_link(_normalize_class_name(prop.property))}")
+                # print(f"Property : Inverse of {_create_link(_normalize_class_name(prop.property))}")
+
+                property_map[property_name] = []
+                property_map[property_name].append(f"inverse of {_normalize_value(prop.property)}")
             else:
                 raise ValueError(f"Unhandled property type {type(prop)} for property {prop}")
         
+        # Check what properties we found
+        for k, v in property_map.items():
+            if isinstance(v, list):
+                for v_i in v:
+                    print(f"Property : {k} : {v_i}")
+            else:
+                print(f"Property : {k} : {v}")
+        
         if has_definition:
-            print(f"Definition : {definition_property[i]}")
+            definition_value = definition_property[i]
+
+            if isinstance(definition_value, list):
+                for definition in definition_value:
+                    definition_lang = getattr(definition, "lang", None)
+
+                    # TODO Decide on how I want to handle multiple languages in locstrs
+                    if definition_lang == "en":
+                        print(f"Definition : {str(definition)}")
+                    elif definition_lang is None:
+                        print(f"Definition : {definition}")
+                    else:
+                        print(f"Definition : {definition} : Unsupported language")
+            else:
+                print(f"Definition : {definition_value.get_lang("en") or definition_value}")
         
         print()
 
