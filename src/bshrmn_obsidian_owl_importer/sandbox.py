@@ -48,10 +48,13 @@ def _normalize_value(value) -> str:
     elif isinstance(value, And):
         return f"({' and '.join(_normalize_value(cls) for cls in value.Classes)})"
     elif isinstance(value, OneOf): # TODO generated - needs to be tested
+        1/0 # TODO remove after testing to see if it should occur
         return f"one of ({', '.join(_normalize_value(instance) for instance in value.instances)})"
     elif isinstance(value, Inverse): # TODO generated - needs to be tested
+        1/0 # TODO remove after testing to see if it should occur
         return f"inverse of {_create_link(_normalize_class_name(value.property))} with value {_normalize_value(value.value)}"
     elif isinstance(value, ConstrainedDatatype): # TODO generated - needs to be tested
+        1/0 # TODO remove after testing to see if it should occur
         return f"constrained datatype of {_create_link(_normalize_class_name(value.datatype))} with constraints {_normalize_value(value.constraints)}"
     elif isinstance(value, Restriction):
         return f"({_expand_restriction_txt(value)})"
@@ -79,117 +82,131 @@ if __name__ == "__main__":
     # Print classes as list
     # print(list(onto.classes()))
     
-    # Classes
-    for i in onto.classes():
-        i : ThingClass
-        print(f"Class : {i} : {i.label.first() or i.name}")
+    # Track namespaces we come across
+    # namespaces = {}
 
-        # Track property restrictions listed under subClassOf
-        property_map = {}
+    # # Classes
+    # for i in onto.classes():
+    #     i : ThingClass
+    #     # TODO consider multiple labels and multiple languages
+    #     print(f"Class : {i} : {i.label.first() or i.name}")
 
-        parent_classes : CallbackList = i.is_a
-        for parent in parent_classes:
-            if isinstance(parent, Restriction):
-                # print(f"Restriction on property : {_expand_restriction_txt(parent)}")
+    #     # Add namespace to set of namespaces
+    #     namespaces[i.namespace.name] = i.namespace.get_base_iri()
 
-                # Track property restrictions and use later when printing properties
-                (property_name, property_type, property_value) = _get_restriction_triple(parent)
-                if property_name not in property_map:
-                    property_map[property_name] = []
+    #     # Track property restrictions listed under subClassOf
+    #     property_map = {}
+
+    #     parent_classes : CallbackList = i.is_a
+    #     for parent in parent_classes:
+    #         if isinstance(parent, Restriction):
+    #             # print(f"Restriction on property : {_expand_restriction_txt(parent)}")
+
+    #             # Track property restrictions and use later when printing properties
+    #             (property_name, property_type, property_value) = _get_restriction_triple(parent)
+    #             if property_name not in property_map:
+    #                 property_map[property_name] = []
                 
-                property_map[property_name].append(f"{property_type} {property_value}")
-            elif isinstance(parent, And):
-                print(f"Intersection of : {parent.Classes}")
-            elif isinstance(parent, Or): # TODO generated - needs to be tested
-                print(f"Union of : {parent.Classes}")
-            elif isinstance(parent, Not): # TODO generated - needs to be tested
-                print(f"Negation of : {parent.Class}")
-            elif isinstance(parent, OneOf): # TODO generated - needs to be tested
-                print(f"One of : {parent.instances}")
-            elif isinstance(parent, Inverse): # TODO generated - needs to be tested
-                print(f"Inverse of : {parent.property} with value {parent.value}")
-            elif isinstance(parent, ConstrainedDatatype): # TODO generated - needs to be tested
-                print(f"Constrained Datatype : {parent.datatype} with constraints {parent.constraints}")
-            else:
-                print(f"Parent : {parent} : {parent.label.first() or parent.name}")
+    #             property_map[property_name].append(f"{property_type} {property_value}")
+    #         elif isinstance(parent, And):
+    #             print(f"Intersection of : {parent.Classes}")
+    #         elif isinstance(parent, Or): # TODO generated - needs to be tested
+    #             print(f"Union of : {parent.Classes}")
+    #             1/0 # TODO remove after testing to see if it should occur
+    #         elif isinstance(parent, Not): # TODO generated - needs to be tested
+    #             print(f"Negation of : {parent.Class}")
+    #             1/0 # TODO remove after testing to see if it should occur
+    #         elif isinstance(parent, OneOf): # TODO generated - needs to be tested
+    #             print(f"One of : {parent.instances}")
+    #             1/0 # TODO remove after testing to see if it should occur
+    #         elif isinstance(parent, Inverse): # TODO generated - needs to be tested
+    #             print(f"Inverse of : {parent.property} with value {parent.value}")
+    #             1/0 # TODO remove after testing to see if it should occur
+    #         elif isinstance(parent, ConstrainedDatatype): # TODO generated - needs to be tested
+    #             print(f"Constrained Datatype : {parent.datatype} with constraints {parent.constraints}")
+    #             1/0 # TODO remove after testing to see if it should occur
+    #         else:
+    #             print(f"Parent : {parent} : {parent.label.first() or parent.name}")
         
-        # Check what properties we found through restrictions
-        # print(property_map)
+    #     # Check what properties we found through restrictions
+    #     # print(property_map)
 
-        properties : set[PropertyClass] = i.get_class_properties()
-        has_definition = False
-        for prop in properties:
-            if prop == definition_property:
-                has_definition = True
-                continue
+    #     properties : set[PropertyClass] = i.get_class_properties()
+    #     has_definition = False
+    #     for prop in properties:
+    #         if prop == definition_property:
+    #             has_definition = True
+    #             continue
 
-            # Skip properties that were already processed through restrictions
-            if _normalize_class_name(prop) in property_map:
-                continue
+    #         # Skip properties that were already processed through restrictions
+    #         if _normalize_class_name(prop) in property_map:
+    #             continue
             
-            property_name = _normalize_class_name(prop)
+    #         property_name = _normalize_class_name(prop)
 
-            if isinstance(prop, PropertyClass):
-                prop_value = prop[i]
-                # TODO This should probably be an option for a specific language
-                # prop_value = prop_value.get_lang("all") or prop_value
-                # Retrieve values for specified language if multiple languages are present
-                prop_value = prop_value.get_lang("en") or prop_value
-                if isinstance(prop_value, list):
-                    if all(v is None for v in prop_value):
-                        # Skip the property if all values are None
-                        continue
-                    else:
-                        # Normalize value list elements
-                        # prop_value = [_normalize_value(v) for v in prop_value]
-                        # print(f"Property : {prop} : {_create_link(_normalize_class_name(prop))} : {prop_value}")
+    #         if isinstance(prop, PropertyClass):
+    #             prop_value = prop[i]
+    #             # TODO This should probably be an option for a specific language
+    #             # prop_value = prop_value.get_lang("all") or prop_value
+    #             # Retrieve values for specified language if multiple languages are present
+    #             prop_value = prop_value.get_lang("en") or prop_value
+    #             if isinstance(prop_value, list):
+    #                 if all(v is None for v in prop_value):
+    #                     # Skip the property if all values are None
+    #                     continue
+    #                 else:
+    #                     # Normalize value list elements
+    #                     # prop_value = [_normalize_value(v) for v in prop_value]
+    #                     # print(f"Property : {prop} : {_create_link(_normalize_class_name(prop))} : {prop_value}")
 
-                        property_map[property_name] = []
+    #                     property_map[property_name] = []
 
-                        for v in prop_value:
-                            property_map[property_name].append(_normalize_value(v))
-                else:
-                    # Assuming that this is either a single value or logical construct
-                    # print(f"Property: {prop} : {_create_link(_normalize_class_name(prop))} : {_normalize_value(prop_value)}")
+    #                     for v in prop_value:
+    #                         property_map[property_name].append(_normalize_value(v))
+    #             else:
+    #                 # Assuming that this is either a single value or logical construct
+    #                 # print(f"Property: {prop} : {_create_link(_normalize_class_name(prop))} : {_normalize_value(prop_value)}")
 
-                    property_map[property_name] = []
-                    property_map[property_name].append(_normalize_value(prop_value))
+    #                 property_map[property_name] = []
+    #                 property_map[property_name].append(_normalize_value(prop_value))
 
-                    1/0 # TODO remove after testing to see if it should occur
-            elif isinstance(prop, Inverse):
-                # print(f"Property : Inverse of {_create_link(_normalize_class_name(prop.property))}")
+    #                 1/0 # TODO remove after testing to see if it should occur
+    #         elif isinstance(prop, Inverse):
+    #             # print(f"Property : Inverse of {_create_link(_normalize_class_name(prop.property))}")
 
-                property_map[property_name] = []
-                property_map[property_name].append(f"inverse of {_normalize_value(prop.property)}")
-            else:
-                raise ValueError(f"Unhandled property type {type(prop)} for property {prop}")
+    #             property_map[property_name] = []
+    #             property_map[property_name].append(f"inverse of {_normalize_value(prop.property)}")
+    #         else:
+    #             raise ValueError(f"Unhandled property type {type(prop)} for property {prop}")
         
-        # Check what properties we found
-        for k, v in property_map.items():
-            if isinstance(v, list):
-                for v_i in v:
-                    print(f"Property : {k} : {v_i}")
-            else:
-                print(f"Property : {k} : {v}")
+    #     # Check what properties we found
+    #     for k, v in property_map.items():
+    #         if isinstance(v, list):
+    #             for v_i in v:
+    #                 print(f"Property : {k} : {v_i}")
+    #         else:
+    #             print(f"Property : {k} : {v}")
         
-        if has_definition:
-            definition_value = definition_property[i]
+    #     if has_definition:
+    #         definition_value = definition_property[i]
 
-            if isinstance(definition_value, list):
-                for definition in definition_value:
-                    definition_lang = getattr(definition, "lang", None)
+    #         if isinstance(definition_value, list):
+    #             for definition in definition_value:
+    #                 definition_lang = getattr(definition, "lang", None)
 
-                    # TODO Decide on how I want to handle multiple languages in locstrs
-                    if definition_lang == "en":
-                        print(f"Definition : {str(definition)}")
-                    elif definition_lang is None:
-                        print(f"Definition : {definition}")
-                    else:
-                        print(f"Definition : {definition} : Unsupported language")
-            else:
-                print(f"Definition : {definition_value.get_lang("en") or definition_value}")
+    #                 # TODO Decide on how I want to handle multiple languages in locstrs
+    #                 if definition_lang == "en":
+    #                     print(f"Definition : {str(definition)}")
+    #                 elif definition_lang is None:
+    #                     print(f"Definition : {definition}")
+    #                 else:
+    #                     print(f"Definition : {definition} : Unsupported language")
+    #         else:
+    #             print(f"Definition : {definition_value.get_lang("en") or definition_value}")
         
-        print()
+    #     print()
+    
+    # print(namespaces)
 
     # Individuals
     # for i in onto.individuals():
@@ -225,100 +242,173 @@ if __name__ == "__main__":
     # print(len(list(onto.individuals())))
 
     # Create output directory
-    # os.makedirs("output", exist_ok=True)
+    output_path = "output" # TODO this should be an input option
+    os.makedirs(output_path, exist_ok=True)
 
-    # # Grab a slice of the classes for testing
-    # class_sample = itertools.islice(onto.classes(), 5)
+    # Track namespaces we come across
+    namespace_dict = {}
 
-    # # Create a text file for each class
-    # for onto_class in class_sample:
-    #     onto_class : ThingClass
+    # Grab a slice of the classes for testing
+    class_sample = itertools.islice(onto.classes(), 5)
+
+    # Create a text file for each class
+    for onto_class in class_sample:
+        onto_class : ThingClass
         
-    #     # TODO remove
-    #     print(f"Class : {onto_class} : {onto_class.label.first() or onto_class.name}")
+        # TODO remove
+        print(f"Class : {onto_class} : {onto_class.label.first() or onto_class.name}")
 
-    #     class_name_normed = _normalize_class_name(onto_class) # Replace spaces with underscores for file naming
+        class_name_normed = _normalize_class_name(onto_class) # Replace spaces with underscores for file naming
+        class_namespace_name = onto_class.namespace.name
 
-    #     super_classes_dict = {}
+        # Add namespace to set of namespaces
+        namespace_dict[class_namespace_name] = onto_class.namespace.get_base_iri()
 
-    #     super_classes : CallbackList = onto_class.is_a
-    #     for super_class in super_classes:
-    #         if isinstance(super_class, Restriction):
-    #             if "Restriction" not in super_classes_dict:
-    #                 super_classes_dict["Restriction"] = []
+        # Track property restrictions listed under subClassOf
+        property_dict = {}
+
+        # Track super classes to print them later
+        super_classes_dict = {}
+
+        super_classes : CallbackList = onto_class.is_a
+        for super_class in super_classes:
+            if isinstance(super_class, Restriction):
+                # Track property restrictions and use later when printing properties
+                (property_name, property_type, property_value) = _get_restriction_triple(super_class)
+                if property_name not in property_dict:
+                    property_dict[property_name] = []
                 
-    #             super_classes_dict["Restriction"].append(f"{_expand_restriction_txt(super_class)}\n")
-    #         elif isinstance(super_class, And):
-    #             if "Intersection Of" not in super_classes_dict:
-    #                 super_classes_dict["Intersection Of"] = []
+                property_dict[property_name].append(f"{property_type} {property_value}")
                 
-    #             super_classes_dict["Intersection Of"].append(f"{super_class.Classes}\n")
-    #         elif isinstance(super_class, Or): # TODO generated - needs to be tested
-    #             if "Union Of" not in super_classes_dict:
-    #                 super_classes_dict["Union Of"] = []
+                # TODO remove this section
+                # if "Restriction" not in super_classes_dict:
+                #     super_classes_dict["Restriction"] = []
                 
-    #             super_classes_dict["Union Of"].append(f"{super_class.Classes}\n")
-    #         elif isinstance(super_class, Not): # TODO generated - needs to be tested
-    #             if "Complement Of" not in super_classes_dict:
-    #                 super_classes_dict["Complement Of"] = []
+                # super_classes_dict["Restriction"].append(f"{_expand_restriction_txt(super_class)}\n")
+            elif isinstance(super_class, And):
+                if "Intersection Of" not in super_classes_dict:
+                    super_classes_dict["Intersection Of"] = []
                 
-    #             super_classes_dict["Complement Of"].append(f"{super_class.Class}\n")
-    #         elif isinstance(super_class, OneOf): # TODO generated - needs to be tested
-    #             if "One Of" not in super_classes_dict:
-    #                 super_classes_dict["One Of"] = []
+                super_classes_dict["Intersection Of"].append(f"{super_class.Classes}\n")
+            elif isinstance(super_class, Or): # TODO generated - needs to be tested
+                if "Union Of" not in super_classes_dict:
+                    super_classes_dict["Union Of"] = []
                 
-    #             super_classes_dict["One Of"].append(f"{super_class.instances}\n")
-    #         elif isinstance(super_class, Inverse): # TODO generated - needs to be tested
-    #             if "Inverse Of" not in super_classes_dict:
-    #                 super_classes_dict["Inverse Of"] = []
+                super_classes_dict["Union Of"].append(f"{super_class.Classes}\n")
+            elif isinstance(super_class, Not): # TODO generated - needs to be tested
+                if "Complement Of" not in super_classes_dict:
+                    super_classes_dict["Complement Of"] = []
                 
-    #             super_classes_dict["Inverse Of"].append(f"{super_class.property} with value {super_class.value}\n")
-    #         elif isinstance(super_class, ConstrainedDatatype): # TODO generated - needs to be tested
-    #             if "Constrained By" not in super_classes_dict:
-    #                 super_classes_dict["Constrained By"] = []
+                super_classes_dict["Complement Of"].append(f"{super_class.Class}\n")
+            elif isinstance(super_class, OneOf): # TODO generated - needs to be tested
+                if "One Of" not in super_classes_dict:
+                    super_classes_dict["One Of"] = []
                 
-    #             super_classes_dict["Constrained By"].append(f"{super_class.datatype} with constraints {super_class.constraints}\n")
-    #         else:
-    #             if "Subclass Of" not in super_classes_dict:
-    #                 super_classes_dict["Subclass Of"] = []
+                super_classes_dict["One Of"].append(f"{super_class.instances}\n")
+            elif isinstance(super_class, Inverse): # TODO generated - needs to be tested
+                if "Inverse Of" not in super_classes_dict:
+                    super_classes_dict["Inverse Of"] = []
                 
-    #             super_classes_dict["Subclass Of"].append(f"{_create_link(_normalize_class_name(super_class))}\n")
+                super_classes_dict["Inverse Of"].append(f"{super_class.property} with value {super_class.value}\n")
+            elif isinstance(super_class, ConstrainedDatatype): # TODO generated - needs to be tested
+                if "Constrained By" not in super_classes_dict:
+                    super_classes_dict["Constrained By"] = []
+                
+                super_classes_dict["Constrained By"].append(f"{super_class.datatype} with constraints {super_class.constraints}\n")
+            else:
+                if "Subclass Of" not in super_classes_dict:
+                    super_classes_dict["Subclass Of"] = []
+                
+                super_classes_dict["Subclass Of"].append(f"{_create_link(_normalize_class_name(super_class))}\n")
             
-    #         # Sort the super classes by key so that they print alphabetically in the output file
-    #         super_classes_dict = dict(sorted(super_classes_dict.items()))
+        # Sort the super classes by key so that they print alphabetically in the output file
+        super_classes_dict = dict(sorted(super_classes_dict.items()))
 
-        # properties : set[PropertyClass] = onto_class.get_class_properties()
-        # has_definition = False
-        # print("Properties:")
-        # for prop in properties:
-        #     if prop == definition_property:
-        #         has_definition = True
+        properties : set[PropertyClass] = onto_class.get_class_properties()
+        has_definition = False
+
+        for prop in properties:
+            # Skip properties that were already processed through restrictions
+            if _normalize_class_name(prop) in property_dict:
+                continue
             
-        #     if getattr(prop, "label", None):
-        #         print(f"Property : {prop} : {prop.label.first() or prop.name}")
-        #     else:
-        #         print(f"Property : {prop}")
+            property_name = _normalize_class_name(prop)
+
+            if prop == definition_property:
+                has_definition = True
+                property_dict[property_name] = []
+                continue
+
+            if isinstance(prop, PropertyClass):
+                prop_value = prop[onto_class]
+                prop_value = prop_value.get_lang("en") or prop_value
+
+                if isinstance(prop_value, list):
+                    if all(v is None for v in prop_value):
+                        # Skip the property if all values are None
+                        continue
+                    else:
+                        property_dict[property_name] = []
+
+                        for v in prop_value:
+                            property_dict[property_name].append(f"{_normalize_value(v)}\n")
+                else:
+                    # Assuming that this is either a single value or logical construct
+                    property_dict[property_name] = []
+                    property_dict[property_name].append(f"{_normalize_value(prop_value)}\n")
+            elif isinstance(prop, Inverse):
+                property_dict[property_name] = []
+                property_dict[property_name].append(f"inverse of {_normalize_value(prop.property)}\n")
+            else:
+                raise ValueError(f"Unhandled property type {type(prop)} for property {prop}")
         
-        # if has_definition:
-        #     print(f"Definition : {getattr(onto_class, definition_property.name, "Could not find definition")}")
-        # else: # Fallback to default rdfs comment
-        #     print(f"Comment : {onto_class.comment}")
+        # TODO Not sure if I want to handle this separately from the other properties anymore
+        if has_definition:
+            definition_value = definition_property[onto_class]
+            definition_property_name = _normalize_class_name(definition_property)
+
+            if isinstance(definition_value, list):
+                for definition in definition_value:
+                    definition_lang = getattr(definition, "lang", None)
+
+                    # TODO Decide on how I want to handle multiple languages in locstrs
+                    if definition_lang == "en":
+                        property_dict[definition_property_name].append(f"{str(definition)}\n")
+                    elif definition_lang is None:
+                        property_dict[definition_property_name].append(f"{definition}\n")
+            else:
+                property_dict[definition_property_name].append(f"{definition_value.get_lang("en") or definition_value}\n")
         
-        # with open(f"output/{class_name_normed}.md", "w") as file:
-        #     # Properties block
-        #     # Include alias if different than pretty name
-        #     if class_name_normed != _normalize_class_name(onto_class.name):
-        #         file.write("---\n")
-        #         file.write("aliases:\n")
-        #         file.write(f"  - {onto_class.name}\n")
-        #         file.write("ontologytype: Class\n")
-        #         file.write("---\n")
+        # Sort the properties by key so that they print alphabetically in the output file
+        property_dict = dict(sorted(property_dict.items()))
+        
+        # Create a directory for the namespace
+        namespace_directory = os.path.join(output_path, class_namespace_name)
+        os.makedirs(namespace_directory, exist_ok=True)
+        
+        with open(os.path.join(namespace_directory, f"{class_name_normed}.md"), "w") as file:
+            # Properties block
+            # Include alias if different than pretty name
+            if class_name_normed != _normalize_class_name(onto_class.name):
+                file.write("---\n")
+                file.write("aliases:\n")
+                file.write(f"  - {onto_class.name}\n")
+                file.write("ontologytype: Class\n")
+                file.write("---\n")
             
-        #     # Turn the super classes into headers
-        #     for k, v in super_classes_dict.items():
-        #         file.write(f"# {k}:\n")
-        #         file.writelines(v)
-        #         file.write("\n")
+            # Turn the super classes into headers
+            file.write("# Super Classes\n")
+            for k, v in super_classes_dict.items():
+                file.write(f"## {k}\n")
+                file.writelines(v)
+                file.write("\n")
+            
+            # Turn the properties into headers
+            file.write("# Properties\n")
+            for k, v in property_dict.items():
+                file.write(f"## {k}\n")
+                file.writelines(v)
+                file.write("\n")
             
     
     # my_class = next(onto.classes())
