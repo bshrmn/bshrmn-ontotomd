@@ -175,12 +175,20 @@ def _namespace_to_file_name(namespace : str):
     parsed_namespace = urlparse(namespace)
     print(f"Converting: {namespace} -> {parsed_namespace}") # TODO REMOVE
     onto_file_name = parsed_namespace.netloc + parsed_namespace.path
+    # Add back the fragment identifier if present for consistency
+    onto_file_name += "#" if namespace[-1] == "#" else ""
     return _clean_file_name(onto_file_name)
 
 def _resource_to_file_path(resource : URIRef, base_path = "") -> str:
     # Strip the scheme and split into namespace and local name
     parsed_uri = urlparse(resource)
     namespace, local_name = split_uri(parsed_uri.geturl().replace(parsed_uri.scheme + "://", "", 1))
+
+    # Local name cannot be "index" or "log" since they are reserved in OKF
+    if local_name == "index":
+        local_name = "index_term"
+    elif local_name == "log":
+        local_name = "log_term"
 
     if base_path:
         return f"{base_path}/{_clean_file_name(namespace)}/{_clean_file_name(local_name)}"
@@ -798,6 +806,10 @@ def main():
 
             # Do not create pages for these resources
             if s in do_not_create_resources:
+                # Update processed resources
+                queued_resources.discard(s)
+                processed_resources.add(s)
+
                 continue
             
             # Gather resource info
@@ -818,6 +830,10 @@ def main():
 
             # Do not create pages for these resources
             if s in do_not_create_resources:
+                # Update processed resources
+                queued_resources.discard(s)
+                processed_resources.add(s)
+                
                 continue
             
             # Find the right graph to use
@@ -837,6 +853,45 @@ def main():
             # TODO log
             print(f"Saving graph associated with namespace: {namespace}")
             _serialize_graph(namespace)
+
+        # Create top-level index.md file
+        # Sort namespaces alphabetically
+        # NOTE: This will not always produce an intuitive result (e.g. the expected name could appear later in the URI)
+        sorted_namespaces = sorted(parsed_graphs.keys())
+
+        base_index_path = f"{BASE_PATH}/index.md" if BASE_PATH else "index.md"
+        with open(base_index_path, "w", encoding="utf-8") as base_index_file:
+            base_index_file.write("# Namespaces\n")
+
+            for namespace in sorted_namespaces:
+                if BASE_PATH:
+                    base_index_file.write(f"- [{namespace}]({BASE_PATH}/{_namespace_to_file_name(namespace)}/)\n")
+                else:
+                    base_index_file.write(f"- [{namespace}]({_namespace_to_file_name(namespace)}/)\n")
+
+        # Create namespace-level index.md files
+        for directory_name in os.listdir(BASE_PATH):
+            if directory_name == "index.md" or directory_name == "log.md":
+                continue
+    
+            onto_directory_path = f"{BASE_PATH + "/" if BASE_PATH else ""}{directory_name}"
+            with open(f"{onto_directory_path}/index.md", "w", encoding="utf-8") as namespace_index_file:
+                namespace_index_file.write("# Resources\n")
+    
+                for file_name in os.listdir(onto_directory_path):
+                        if file_name == "index.md" or directory_name == "log.md":
+                            continue
+    
+                        resource_title = ""
+                        with open(f"{onto_directory_path}/{file_name}", "r", encoding="utf-8") as resource_file:
+                            for i, line in enumerate(resource_file):
+                                # NOTE: Magic number, but that part of the frontmatter should be consistent
+                                if i == 2:
+                                    # Grab everything after "title: "
+                                    resource_title = line[7:].strip()
+    
+                        if resource_title:
+                            namespace_index_file.write(f"- [{resource_title}]({onto_directory_path}/{file_name})\n")
     
     print()
     print("Done processing queue!")
