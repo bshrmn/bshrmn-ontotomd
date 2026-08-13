@@ -113,9 +113,9 @@ EXTERNAL_LINK_PROPERTIES = {
 class OntoResource:
     type : str = ""
     resource : URIRef = None
-    name_properties: dict[URIRef, list[str]] = field(default_factory=dict)
-    description_properties: dict[URIRef, list[str]] = field(default_factory=dict)
-    other_properties: dict[URIRef, list[str]] = field(default_factory=dict)
+    name_properties : dict[URIRef, list[str]] = field(default_factory=dict)
+    description_properties : dict[URIRef, list[str]] = field(default_factory=dict)
+    other_properties : dict[URIRef, list[str]] = field(default_factory=dict)
 
     def update_names(self, key, value):
         if key in self.name_properties:

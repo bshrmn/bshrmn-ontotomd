@@ -9,6 +9,8 @@ dependencies = [
   "ruff>=0.15.13",
   "owlready2>=0.50",
   "rdflib>=7.6.0",
+  "typer-config[yaml]>=1.5.1",
+  "pydantic>=2.13.4",
 ]
 
 [project.scripts]
