@@ -4,7 +4,10 @@ from typer_config.loaders import yaml_loader
 from typer_config.callbacks import conf_callback_factory
 import typer
 from typer_config.decorators import use_config
-from bshrmn_obsidian_owl_importer import GlobalParamsConfig, PreloadConfig, ProcessConfig, preload_ontos
+from rich import print
+from rich.console import Console
+from rich.table import Table
+from bshrmn_obsidian_owl_importer import GlobalParamsConfig, PreloadConfig, ProcessConfig, preload_ontos, process_onto, OTMProcessSummary
 
 def global_params_validator_loader(param_value: str) -> dict[str, Any]:
     yaml_conf = yaml_loader(param_value)
@@ -32,7 +35,8 @@ global_params_validator_callback = conf_callback_factory(global_params_validator
 preload_validator_callback = conf_callback_factory(preload_validator_loader)
 process_validator_callback = conf_callback_factory(process_validator_loader)
 
-app = typer.Typer()
+console = Console()
+app = typer.Typer(no_args_is_help=True, help="CLI tool for converting ontology graphs into Markdown directories.")
 
 def global_params_parser(data: dict[str, Any]) -> dict[str, Any]:
     return GlobalParamsConfig(**data)
@@ -50,11 +54,17 @@ def preload(
     preload: Annotated[PreloadConfig, typer.Argument(parser=preload_parser, hidden=True)],
 ):
     """
-    Sample text TODO
+    Preload ontology files locally based on default list and user configurations.
+
+    Specify configuration in a YAML file and pass it with the --config option!
     """
-    typer.echo("Preload script starting")
-    total_preloads = preload_ontos(global_params, preload)
-    typer.echo(f"Finished preloading {total_preloads} namespaces")
+    print("Preload script starting")
+    command_result = preload_ontos(global_params, preload)
+    # NOTE: Currently unused failure path
+    if command_result.error_message:
+        print(f"Finished with exception: {command_result.error_message}")
+    else:
+        print(f"Finished preloading {command_result.result} namespaces")
 
 @app.command()
 @use_config(process_validator_callback)
@@ -63,14 +73,27 @@ def process(
     process: Annotated[ProcessConfig, typer.Argument(parser=process_parser, hidden=True)],
 ):
     """
-    Sample text TODO
+    Process target ontology by creating directories of Markdown files from its resource graph.
+
+    Specify configuration in a YAML file and pass it with the --config option!
     """
-    typer.echo(global_params)
-    typer.echo(f"Log Level: {global_params.logging_params.logging_level}")
-    typer.echo(f"Onto Dir: {global_params.ontologies_directory.resolve()} | Exists: {global_params.ontologies_directory.exists()}")
-    typer.echo(f"Out Dir: {global_params.output_directory.resolve()} | Exists: {global_params.output_directory.exists()}")
-    typer.echo(process)
-    typer.echo(f"Target: {process.target.resolve()} | Exists: {process.target.exists()}")
+    print("Process script starting")
+    command_result = process_onto(global_params, process)
+    if command_result.error_message:
+        print(f"Finished with exception: {command_result.error_message}")
+    else:
+        print(f"Finished processing resources")
+
+        summary : OTMProcessSummary = command_result.result
+        table = Table("Name", "Count", title="Run Summary")
+        table.add_row("Classes Found in Primary Onto", str(summary.primary_class_count))
+        table.add_row("Individuals Found in Primary Onto", str(summary.primary_individual_count))
+        table.add_row("Properties Found in Primary Onto", str(summary.primary_property_count))
+        table.add_row("Resources Skipped in Primary Onto", str(summary.primary_skipped_count))
+        table.add_row("Stubbed Resources Found in Primary Onto", str(summary.stubbed_count))
+        table.add_row("Processed External Resources", str(summary.external_processed_count))
+        table.add_row("Skipped External Resources", str(summary.external_skipped_count))
+        console.print(table)
 
 if __name__ == "__main__":
     app()

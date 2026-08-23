@@ -1,7 +1,7 @@
-from typing import Optional, Union
+from typing import Optional, Union, Annotated
 from enum import Enum
 from pathlib import Path
-from pydantic import BaseModel, AnyUrl
+from pydantic import BaseModel, AnyUrl, UrlConstraints
 
 class LogLevel(str, Enum):
     DEBUG = "DEBUG"
@@ -28,12 +28,12 @@ class PreloadConfig(BaseModel):
 class ProcessConfig(BaseModel):
     target : Union[Path, AnyUrl]
     target_namespace : str
-    skippable_resources : Optional[list[Union[Path, AnyUrl]]] = None
-    skippable_namespaces : Optional[list[Union[Path, AnyUrl]]] = None
-    do_not_create_resources : Optional[list[Union[Path, AnyUrl]]] = None
-    class_types : Optional[list[Union[Path, AnyUrl]]] = None
-    individual_types : Optional[list[Union[Path, AnyUrl]]] = None
-    property_types : Optional[list[Union[Path, AnyUrl]]] = None
-    alias_properties : Optional[list[Union[Path, AnyUrl]]] = None
-    description_properties : Optional[list[Union[Path, AnyUrl]]] = None
-    external_link_properties : Optional[list[Union[Path, AnyUrl]]] = None
+    skippable_resources : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    skippable_namespaces : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    do_not_create_resources : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    class_types : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    individual_types : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    property_types : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    alias_properties : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    description_properties : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
+    external_link_properties : Optional[list[Annotated[AnyUrl, UrlConstraints(preserve_empty_path=True)]]] = None
