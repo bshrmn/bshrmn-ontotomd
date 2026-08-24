@@ -8,7 +8,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from typing import TypeVar, Optional
 from pydantic import AnyUrl
-from bshrmn_obsidian_owl_importer import LoggingParamsConfig, GlobalParamsConfig, PreloadConfig, ProcessConfig
+from bshrmn_ontotomd import LoggingParamsConfig, GlobalParamsConfig, PreloadConfig, ProcessConfig
 from rich import print
 from rich.progress import track, Progress, SpinnerColumn, TextColumn
 from yaml import dump, SafeDumper

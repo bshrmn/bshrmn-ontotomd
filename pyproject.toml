@@ -1,20 +1,19 @@
 [project]
-name = "bshrmn-obsidian-owl-importer"
+name = "bshrmn-ontotomd"
 version = "0.1.0"
-description = "Add your description here"
+description = "A CLI tool for converting ontology graphs into Markdown directories."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
   "typer>=0.25.1",
   "ruff>=0.15.13",
-  "owlready2>=0.50",
   "rdflib>=7.6.0",
   "typer-config[yaml]>=1.5.1",
   "pydantic>=2.13.4",
 ]
 
 [project.scripts]
-bshrmn-obsidian-owl-importer = "bshrmn_obsidian_owl_importer:main"
+bshrmn-ontotomd = "bshrmn_ontotomd.main:app"
 
 [build-system]
 requires = ["uv_build>=0.11.14,<0.12.0"]

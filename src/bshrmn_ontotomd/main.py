@@ -7,7 +7,7 @@ from typer_config.decorators import use_config
 from rich import print
 from rich.console import Console
 from rich.table import Table
-from bshrmn_obsidian_owl_importer import GlobalParamsConfig, PreloadConfig, ProcessConfig, preload_ontos, process_onto, OTMProcessSummary
+from bshrmn_ontotomd import GlobalParamsConfig, PreloadConfig, ProcessConfig, preload_ontos, process_onto, OTMProcessSummary
 
 def global_params_validator_loader(param_value: str) -> dict[str, Any]:
     yaml_conf = yaml_loader(param_value)
@@ -36,7 +36,7 @@ preload_validator_callback = conf_callback_factory(preload_validator_loader)
 process_validator_callback = conf_callback_factory(process_validator_loader)
 
 console = Console()
-app = typer.Typer(no_args_is_help=True, help="CLI tool for converting ontology graphs into Markdown directories.")
+app = typer.Typer(no_args_is_help=True, help="A CLI tool for converting ontology graphs into Markdown directories.")
 
 def global_params_parser(data: dict[str, Any]) -> dict[str, Any]:
     return GlobalParamsConfig(**data)
@@ -95,5 +95,6 @@ def process(
         table.add_row("Skipped External Resources", str(summary.external_skipped_count))
         console.print(table)
 
+# In case I want to call the script directly
 if __name__ == "__main__":
     app()
