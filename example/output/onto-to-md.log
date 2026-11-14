@@ -1,0 +1,2 @@
+2026-11-14T16:54:43Z | WARNING | bshrmn_ontotomd.ontotomd:ontotomd.py:446 - Resource http://www.w3.org/2000/10/swap/pim/contact#Person has been added to bad resources list
+2026-11-14T16:54:52Z | WARNING | bshrmn_ontotomd.ontotomd:ontotomd.py:381 - Unable to resolve resource: http://purl.org/dc/elements/1.1/creator

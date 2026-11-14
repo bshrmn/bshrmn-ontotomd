@@ -1,0 +1,9 @@
+# Resources
+- [Contributor](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\contributor.md)
+- [Creator](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\creator.md)
+- [Date](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\date.md)
+- [Description](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\description.md)
+- [Format](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\format.md)
+- [Source](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\source.md)
+- [Subject](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\subject.md)
+- [Title](c:\Users\bsher\Documents\bshrmn-ontotomd\output\purl-org_dc_elements_1-1_s\title.md)

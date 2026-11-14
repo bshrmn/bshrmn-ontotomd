@@ -1,0 +1,11 @@
+# Resources
+- [Class](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\Class.md)
+- [comment](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\comment.md)
+- [domain](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\domain.md)
+- [isDefinedBy](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\isDefinedBy.md)
+- [label](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\label.md)
+- [Literal](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\Literal.md)
+- [range](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\range.md)
+- [Resource](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\Resource.md)
+- [subClassOf](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\subClassOf.md)
+- [subPropertyOf](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h\subPropertyOf.md)

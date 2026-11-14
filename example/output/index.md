@@ -1,0 +1,12 @@
+# Namespaces
+- [http://purl.org/dc/dcam/](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\purl-org_dc_dcam_s)
+- [http://purl.org/dc/elements/1.1/](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\purl-org_dc_elements_1-1_s)
+- [http://purl.org/dc/terms/](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\purl-org_dc_terms_s)
+- [http://www.w3.org/1999/02/22-rdf-syntax-ns#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_1999_02_22-rdf-syntax-ns_h)
+- [http://www.w3.org/2000/01/rdf-schema#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_01_rdf-schema_h)
+- [http://www.w3.org/2000/10/swap/pim/contact#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2000_10_swap_pim_contact_h)
+- [http://www.w3.org/2002/07/owl#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h)
+- [http://www.w3.org/2003/01/geo/wgs84_pos#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2003_01_geo_wgs84_pos_h)
+- [http://www.w3.org/2003/06/sw-vocab-status/ns#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2003_06_sw-vocab-status_ns_h)
+- [http://www.w3.org/2004/02/skos/core#](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2004_02_skos_core_h)
+- [http://xmlns.com/foaf/0.1/](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\xmlns-com_foaf_0-1_s)

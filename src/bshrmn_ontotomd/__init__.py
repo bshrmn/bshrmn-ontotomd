@@ -1,5 +1,18 @@
-from .models import LoggingParamsConfig, GlobalParamsConfig, PreloadConfig, ProcessConfig
-from .ontotomd import preload_ontos, process_onto, OTMProcessSummary
+from .models import (
+    GlobalParamsConfig,
+    LoggingParamsConfig,
+    PreloadConfig,
+    ProcessConfig,
+)
+from .ontotomd import OTMProcessSummary, preload_ontos, process_onto
 
-def main() -> None:
-    print("Hello from bshrmn-ontotomd!")
+__version__ = "1.0.0"
+__all__ = [
+    LoggingParamsConfig,
+    GlobalParamsConfig,
+    PreloadConfig,
+    ProcessConfig,
+    preload_ontos,
+    process_onto,
+    OTMProcessSummary,
+]

@@ -10,8 +10,8 @@ wheels/
 .venv
 
 # Input directory
-input/
-ontologies/
+./input/
+./ontologies/
 
 # Output directory
-output/
+./output/

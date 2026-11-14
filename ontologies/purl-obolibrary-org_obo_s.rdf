@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns2="http://purl.obolibrary.org/obo/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0010000">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">has axiom label</rdfs:label>
+    <ns2:IAO_0000600 xml:lang="en">A URI that is intended to be unique label for an axiom used for tracking change to the ontology. For an axiom expressed in different languages, each expression is given the same URI</ns2:IAO_0000600>
+    <ns2:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">has axiom id</ns2:IAO_0000111>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000112">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">example of usage</rdfs:label>
+    <ns2:IAO_0000115 xml:lang="en">A phrase describing how a term should be used and/or a citation to a work which uses it. May also include other kinds of examples that facilitate immediate understanding, such as widely know prototypes or instances of a class, or cases where a relation is said to hold.</ns2:IAO_0000115>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">example of usage</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000600">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">elucidation</rdfs:label>
+    <ns2:IAO_0000119 xml:lang="en">Person:Barry Smith</ns2:IAO_0000119>
+    <ns2:IAO_0000600 xml:lang="en">Primitive terms in a highest-level ontology such as BFO are terms which are so basic to our understanding of reality that there is no way of defining them in a non-circular fashion. For these, therefore, we can provide only elucidations, supplemented by examples and by axioms</ns2:IAO_0000600>
+    <ns2:IAO_0000111 xml:lang="en">elucidation</ns2:IAO_0000111>
+    <ns2:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</ns2:IAO_0000117>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000589">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">OBO foundry unique label</rdfs:label>
+    <ns2:IAO_0000115 xml:lang="en">An alternative name for a class or property which is unique across the OBO Foundry.</ns2:IAO_0000115>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBO Foundry &lt;http://obofoundry.org/&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000111 xml:lang="en">OBO foundry unique label</ns2:IAO_0000111>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Bjoern Peters</ns2:IAO_0000117>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Chris Mungall</ns2:IAO_0000117>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</ns2:IAO_0000117>
+    <ns2:IAO_0000116 xml:lang="en">The intended usage of that property is as follow: OBO foundry unique labels are automatically generated based on regular expressions provided by each ontology, so that SO could specify unique label = 'sequence ' + [label], etc. , MA could specify 'mouse + [label]' etc. Upon importing terms, ontology developers can choose to use the 'OBO foundry unique label' for an imported term or not. The same applies to tools .</ns2:IAO_0000116>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</ns2:IAO_0000115>
+    <ns2:IAO_0000111 xml:lang="en">editor preferred term</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000125">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/IAO_0000078"/>
+    <rdfs:label xml:lang="en">pending final vetting</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000601">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">has associated axiom(nl)</rdfs:label>
+    <ns2:IAO_0000600 xml:lang="en">An axiom associated with a term expressed using natural language</ns2:IAO_0000600>
+    <ns2:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">has associated axiom(nl)</ns2:IAO_0000111>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+    <ns2:IAO_0000116 xml:lang="en">2012-04-05: 
+Barry Smith
+
+The official OBI definition, explaining the meaning of a class or property: 'Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions'  is terrible.
+
+Can you fix to something like:
+
+A statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.
+
+Alan Ruttenberg
+
+Your proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can't be evaluated by those criteria. 
+
+On the specifics of the proposed definition:
+
+We don't have definitions of 'meaning' or 'expression' or 'property'. For 'reference' in the intended sense I think we use the term 'denotation'. For 'expression', I think we you mean symbol, or identifier. For 'meaning' it differs for class and property. For class we want documentation that let's the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let's the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The 'intended reader' part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. 
+
+Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
+
+We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.</ns2:IAO_0000116>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</ns2:IAO_0000115>
+    <ns2:IAO_0000111 xml:lang="en">definition</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000116">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">editor note</rdfs:label>
+    <ns2:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</ns2:IAO_0000115>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obofoundry.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">editor note</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">definition source</rdfs:label>
+    <ns2:IAO_0000119 xml:lang="en">Discussion on obo-discuss mailing-list, see http://bit.ly/hgm99w</ns2:IAO_0000119>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000115 xml:lang="en">Formal citation, e.g. identifier in external database to indicate / attribute source(s) for the definition. Free text indicate / attribute source(s) for the definition. EXAMPLE: Author Name, URI, MeSH Term C04, PUBMED ID, Wiki uri on 31.01.2007</ns2:IAO_0000115>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">definition source</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000602">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">has associated axiom(fol)</rdfs:label>
+    <ns2:IAO_0000600 xml:lang="en">An axiom expressed in first order logic using CLIF syntax</ns2:IAO_0000600>
+    <ns2:IAO_0000119 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000119>
+    <ns2:IAO_0000117 xml:lang="en">Person:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">has associated axiom(fol)</ns2:IAO_0000111>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000180">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">BFO CLIF specification label</rdfs:label>
+    <ns2:IAO_0000119>Person:Alan Ruttenberg</ns2:IAO_0000119>
+    <ns2:IAO_0000232 xml:lang="en">Really of interest to developers only</ns2:IAO_0000232>
+    <ns2:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the term that is used to represent it in the the CLIF specification of BFO2</ns2:IAO_0000115>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/iao.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000232">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">curator note</rdfs:label>
+    <ns2:IAO_0000115 xml:lang="en">An administrative note of use for a curator but of no use for a user</ns2:IAO_0000115>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">curator note</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000179">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">BFO OWL specification label</rdfs:label>
+    <ns2:IAO_0000232 xml:lang="en">Really of interest to developers only</ns2:IAO_0000232>
+    <ns2:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the name of the variable that is used to represent it in the code that generates the BFO OWL file from the lispy specification.</ns2:IAO_0000115>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000234">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">ontology term requester</rdfs:label>
+    <ns2:IAO_0000117 xml:lang="en">Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg</ns2:IAO_0000117>
+    <rdfs:comment>The 'term requester' can credit the person, organization or project who request the ontology term.</rdfs:comment>
+    <ns2:IAO_0000119 xml:lang="en">Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg</ns2:IAO_0000119>
+    <ns2:IAO_0000115 xml:lang="en">The name of the person, project, or organization that motivated inclusion of an ontology term by requesting its addition.</ns2:IAO_0000115>
+    <ns2:IAO_0000111 xml:lang="en">ontology term requester</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000114">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">has curation status</rdfs:label>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</ns2:IAO_0000117>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Bill Bug</ns2:IAO_0000117>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">has curation status</ns2:IAO_0000111>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000117">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">term editor</rdfs:label>
+    <ns2:IAO_0000116 xml:lang="en">20110707, MC: label update to term editor and definition modified accordingly. See https://github.com/information-artifact-ontology/IAO/issues/115.</ns2:IAO_0000116>
+    <ns2:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</ns2:IAO_0000119>
+    <ns2:IAO_0000115 xml:lang="en">Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people</ns2:IAO_0000115>
+    <ns2:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</ns2:IAO_0000117>
+    <ns2:IAO_0000111 xml:lang="en">term editor</ns2:IAO_0000111>
+    <ns2:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000424">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">expand expression to</rdfs:label>
+    <ns2:IAO_0000115 xml:lang="en">A macro expansion tag applied to an object property (or possibly a data property)  which can be used by a macro-expansion engine to generate more complex expressions from simpler ones</ns2:IAO_0000115>
+    <ns2:IAO_0000117 xml:lang="en">Chris Mungall</ns2:IAO_0000117>
+    <ns2:IAO_0000112 xml:lang="en">ObjectProperty: RO_0002104
+Label: has plasma membrane part
+Annotations: IAO_0000424 "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.org/obo/owl/GO#GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)"
+</ns2:IAO_0000112>
+    <ns2:IAO_0000111 xml:lang="en">expand expression to</ns2:IAO_0000111>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000122">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.obolibrary.org/obo/IAO_0000078"/>
+    <rdfs:label xml:lang="en">ready for release</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000078">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

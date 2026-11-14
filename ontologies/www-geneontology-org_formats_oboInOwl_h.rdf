@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://www.geneontology.org/formats/oboInOwl#"
+   xmlns:obo="http://purl.obolibrary.org/obo/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:date</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasDate</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_date</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDefaultNamespace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:default-namespace</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasDefaultNamespace</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_default_namespace</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>A relation between a class and an OBO namespace string. OBO namespaces are to be distinguished from IDspaces; for example, biological_process is a namespace, GO is an idspace.</obo:IAO_0000115>
+    <hasDbXref>oboFormat:namespace</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasOBONamespace</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_obo_namespace</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a7ee5022c80477f9a6f31a9f2be70e2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>pseudo-property. in the oboInOwl translation, all obsolete relations are subProperties of this class</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>relation between a class and its identifier as an OBO ID</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:id</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>id</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>An alias in which the alias exhibits true synonymy. Example: ornithine cycle is an exact synonym of urea cycle</obo:IAO_0000115>
+    <hasDbXref>oboFormat:exact_synonym</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasExactSynonym</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_exact_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <default-namespace>oboInOwl</default-namespace>
+    <hasOBOFormatVersion>1.2</hasOBOFormatVersion>
+    <rdfs:comment>OBO Format metamodel. This meta-ontology is self-describing. OBO metamodel properties are described using OBO metamodel properties</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>An alternative identifier for this class; should follow ID syntax. These can result from class merges</obo:IAO_0000115>
+    <hasDbXref>oboFormat:alt_id</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasAlternativeId</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_alternative_id</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb01dd1bc29d4902ac0bf8698a18d12d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDefinition"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>a relation between a class and an instance of a oboInOwl:Definition</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b2ef4d9916f47f091aa7159428e2181">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An alias in which the alias exhibits true synonymy. Example: ornithine cycle is an exact synonym of urea cycle</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <obo:IAO_0000115>pseudo-property. in the oboInOwl translation, all obsolete relations are subProperties of this class</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:ObsoleteProperty</id>
+    <rdfs:comment>Note that this is not a metaclass</rdfs:comment>
+    <rdfs:label>obsolete_property</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#Synonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <obo:IAO_0000115>An instance of synonym usage. synonym instances are linked to classes via oboInOwl:has*Synonym properties</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:Synonym</id>
+    <rdfs:comment>we are forced to use the n-ary relation pattern in OWL1.0. For OWL2 we may make this a direct axiom between a class and the string</rdfs:comment>
+    <rdfs:label>synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>a relation between a class and an instance of a oboInOwl:Definition</obo:IAO_0000115>
+    <hasDbXref>oboFormat:def</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasDefinition</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:comment>we are forced to use the n-ary relation pattern in OWL1.0. For OWL2 we may make this a direct axiom between a class and the string</rdfs:comment>
+    <rdfs:label>has_definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>An alias in which the alias is related the primary class name, but not necessarily broader or narrower. Example: cytochrome bc1 complex is a related synonym of ubiquinol-cytochrome-c reductase activity; virulence is a related synonym of pathogenesis</obo:IAO_0000115>
+    <hasDbXref>oboFormat:related_synonym</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasRelatedSynonym</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_related_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na92b2f10b1774aebb3d509ea03187dd6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#replacedBy"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>Gives a term which replaces an obsolete term. The value is the id of the replacement term. The value of this tag can safely be used to automatically reassign links to an obsolete term. The replaced_by tag may only be specified for obsolete terms. A single obsolete term may have more than one replaced_by tag. This tag can be used in conjunction with the consider tag.</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8046b8aece12492ab18b5e3979157395">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#Subset"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>A grouping of terms from an ontology or ontologies. Note that this is not a metaclass - classes are linked to subsets via oboInOwl:inSubset</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2def7bb80a3d4344abc08c5905de7bd5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An alternative identifier for this class; should follow ID syntax. These can result from class merges</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#Subset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <obo:IAO_0000115>A grouping of terms from an ontology or ontologies. Note that this is not a metaclass - classes are linked to subsets via oboInOwl:inSubset</obo:IAO_0000115>
+    <hasDbXref>oboFormat:subsetdef</hasDbXref>
+    <hasNarrowSynonym>GO-slim</hasNarrowSynonym>
+    <hasNarrowSynonym>slim</hasNarrowSynonym>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <hasRelatedSynonym>partition</hasRelatedSynonym>
+    <hasRelatedSynonym>view</hasRelatedSynonym>
+    <id>oboInOwl:Subset</id>
+    <rdfs:label>subset</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfae63407b8bd4d64a394946dc3cad928">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#isCyclic"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>A relation R is cyclic if the following holds for some X, Y: X R Y, Y R X, X != Y</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>relation between a class and a oboInOwl:Subset, indicating the class belongs (is a member of) the subset</obo:IAO_0000115>
+    <hasDbXref>oboFormat:subset</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:inSubset</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>in_subset</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d96dfd84d1b4ef580ca5024bff5577f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#Definition"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>The textual definition of the current term. There must be zero or one instances of this tag per term description</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#isCyclic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>A relation R is cyclic if the following holds for some X, Y: X R Y, Y R X, X != Y</obo:IAO_0000115>
+    <hasDbXref>oboFormat:is_cyclic</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:isCyclic</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>is_cyclic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>A relation between a class and an alias term.</obo:IAO_0000115>
+    <hasDbXref>oboFormat:synonym</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasSynonym</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:comment>Note that this should be a super-property of hasRelatedSynonym, hasExactSynonym etc; however, we cannot state this and remain in OWL-DL</rdfs:comment>
+    <rdfs:label>has_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#replacedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>Gives a term which replaces an obsolete term. The value is the id of the replacement term. The value of this tag can safely be used to automatically reassign links to an obsolete term. The replaced_by tag may only be specified for obsolete terms. A single obsolete term may have more than one replaced_by tag. This tag can be used in conjunction with the consider tag.</obo:IAO_0000115>
+    <hasDbXref>oboFormat:replaced_by</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:replacedBy</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>replaced_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>has_obo_format_version</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#savedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:saved_by</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:savedBy</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>saved_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2851f2e861c944a39e095945f6789fd5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>A relation between a class and an OBO namespace string. OBO namespaces are to be distinguished from IDspaces; for example, biological_process is a namespace, GO is an idspace.</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d6f2e99a3774e1ab186765193f88d3b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#id"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>relation between a class and its identifier as an OBO ID</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:jpb</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#consider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>Gives a term which may be an appropriate substitute for an obsolete term, but needs to be looked at carefully by a human expert before the replacement is done</obo:IAO_0000115>
+    <hasDbXref>oboFormat:consider</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:consider</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>consider</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N96bb2b9e62234fe2902846a788d03a80">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>pseudo-class. in the oboInOwl translation, all obsolete classes are subclasses of this class. Note that this is not a metaclass</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:version</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasVersion</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_version</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:xref</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasDbXref</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>database_cross_reference</rdfs:label>
+    <rdfs:label>has_dbxref</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4933c25af2f64689a244418f2a297f67">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>relation between a relation and a human-readable term used to stand in for its identifier</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:jpb</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf8fbcf83cac04be3886e40253a511f10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>relation between a class and a oboInOwl:Subset, indicating the class belongs (is a member of) the subset</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <obo:IAO_0000115>pseudo-class. in the oboInOwl translation, all obsolete classes are subclasses of this class. Note that this is not a metaclass</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:ObsoleteClass</id>
+    <rdfs:label>obsolete_class</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#DbXref">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <hasDbXref>http://www.w3.org/2000/01/rdf-schema#seeAlso</hasDbXref>
+    <hasDbXref>http://www.w3.org/2004/02/skos/core#related</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:DbXref</id>
+    <rdfs:label>database_cross_reference</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb098a521cde3489ca42b86e82b81ac07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#consider"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>Gives a term which may be an appropriate substitute for an obsolete term, but needs to be looked at carefully by a human expert before the replacement is done</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSubset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>relation between an ontology and a oboInOwl:Subset, indicating classes in the ontology belong to the subset</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasSubset</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_subset</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e65734f189847b3abe6f0c721fd8127">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#Synonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An instance of synonym usage. synonym instances are linked to classes via oboInOwl:has*Synonym properties</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#autoGeneratedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>oboFormat:auto_generated_by</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:autoGeneratedBy</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>auto_generated_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>An alias in which the alias is broader than the primary class name. Example: cell division is a broad synonym of cytokinesis</obo:IAO_0000115>
+    <hasDbXref>oboFormat:broad_synonym</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasBroadSynonym</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_broad_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3a73477caaf443aa19377a31eccbc93">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An alias in which the alias is narrower than the primary class name. Example: pyrimidine-dimer repair by photolyase is a narrow synonym of photoreactive repair</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonymType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasDbXref>http://www.geneontology.org/GO.usage.shtml#type</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasSynonymType</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_synonym_type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9de2e53429054162a66ff1c413c7eb6a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasSynonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>A relation between a class and an alias term.</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#Definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <obo:IAO_0000115>The textual definition of the current term. There must be zero or one instances of this tag per term description</obo:IAO_0000115>
+    <hasDbXref>http://www.obofoundry.org/wiki/index.php/Definitions</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:Definition</id>
+    <rdfs:comment>we are forced to use the n-ary relation pattern in OWL1.0. For OWL2 we may make this a direct axiom between a class and the string</rdfs:comment>
+    <rdfs:label>definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>An alias in which the alias is narrower than the primary class name. Example: pyrimidine-dimer repair by photolyase is a narrow synonym of photoreactive repair</obo:IAO_0000115>
+    <hasDbXref>oboFormat:narrow_synonym</hasDbXref>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasNarrowSynonym</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_narrow_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#hasURI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:hasURI</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>has_URI</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee24fc3da9cd4eb3938e0743555823cc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasSubset"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>relation between an ontology and a oboInOwl:Subset, indicating classes in the ontology belong to the subset</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:cjm</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncdd2faa4748d4b01a638dc235fcde720">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An alias in which the alias is related the primary class name, but not necessarily broader or narrower. Example: cytochrome bc1 complex is a related synonym of ubiquinol-cytochrome-c reductase activity; virulence is a related synonym of pathogenesis</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>relation between a relation and a human-readable term used to stand in for its identifier</obo:IAO_0000115>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:shorthand</id>
+    <is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_metadata_tag>
+    <rdfs:label>shorthand</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N78f581fccd5e457e9fc4e11f1d0ce4b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Axiom"/>
+    <owl:annotatedSource rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    <owl:annotatedTarget>An alias in which the alias is broader than the primary class name. Example: cell division is a broad synonym of cytokinesis</owl:annotatedTarget>
+    <hasDbXref>oboInOwl:GOC</hasDbXref>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#SynonymType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <hasOBONamespace>oboInOwl</hasOBONamespace>
+    <id>oboInOwl:SynonymType</id>
+    <rdfs:label>synonym_type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+</rdf:RDF>

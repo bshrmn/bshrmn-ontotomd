@@ -1,0 +1,12 @@
+# Resources
+- [AnnotationProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\AnnotationProperty.md)
+- [Class](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\Class.md)
+- [DatatypeProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\DatatypeProperty.md)
+- [disjointWith](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\disjointWith.md)
+- [equivalentClass](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\equivalentClass.md)
+- [equivalentProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\equivalentProperty.md)
+- [FunctionalProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\FunctionalProperty.md)
+- [InverseFunctionalProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\InverseFunctionalProperty.md)
+- [inverseOf](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\inverseOf.md)
+- [ObjectProperty](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\ObjectProperty.md)
+- [Thing](c:\Users\bsher\Documents\bshrmn-ontotomd\example\output\www-w3-org_2002_07_owl_h\Thing.md)

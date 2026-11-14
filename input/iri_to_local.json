@@ -1,0 +1,15 @@
+{
+    "http://www.w3.org/2002/07/owl#": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\owl.rdf",
+    "http://purl.obolibrary.org/obo/": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\ro.owl",
+    "http://purl.obolibrary.org/obo/BFO_": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\bfo.owl",
+    "http://purl.obolibrary.org/obo/IAO_": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\iao.owl",
+    "http://www.w3.org/2004/02/skos/core#": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\skos.rdf",
+    "http://xmlns.com/foaf/0.1/": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\foaf.rdf",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\rdfs.rdf",
+    "http://www.w3.org/2000/01/rdf-schema#": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\rdf.rdf",
+    "http://purl.org/dc/elements/1.1/": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\dc.rdf",
+    "http://purl.org/dc/dcam/" : "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\dcam.rdf",
+    "http://purl.org/dc/dcmitype/" : "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\dcmitype.rdf",
+    "http://purl.org/dc/terms/": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\terms.rdf",
+    "http://www.ebi.ac.uk/swo/": "file://C:\\Users\\bsher\\Documents\\bshrmn-ontotomd\\input\\swo.owl"
+}
