@@ -1,6 +1,10 @@
 # OntoToMd
 A CLI tool for parsing ontologies into directories of Markdown files by mapping their resource graphs using Markdown links between files.
+
 (**NOTE:** This is now largely a historic personal project from Summer 2026. Updates are unlikely at this time.)
+
+![Example ontology resource input.](/img/onto-input.png "Ontology Resource Input")
+![Example Markdown resource output.](/img/onto-output.png "Markdown Resource Output")
 
 ## Rationale
 I have enjoyed using Obsidian for note-taking but found the process of linking parts of my notes to existing concepts that I have yet to document a bit tedious. This is especially the case for general "vocabulary" terms that I want linked so that I can see shared connections between my notes in the graph view. I thought that it would be nice to be able to jumpstart this process for a particular domain by importing a set of notes that already have appropriate connections established between them. New notes could then be inserted into this prepopulated knowledge graph by definining their connections to the existing notes. This does not eliminate the need to manually link my new notes or add new connections between existing notes as I see relevant, but it hopefully facilitates some initial setup.
@@ -16,6 +20,8 @@ An example usage of this tool as applied to the FOAF ontology is included in the
 The description below assumes that the package has been installed in the current Python environment (e.g. via `uv sync`) and is being called from the base folder of the project.
 
 The tool call used is: `bshrmn-ontomd process --config ./example/input/config.yaml`
+
+![CLI OntoToMd process command summary.](/img/process-call.png "Process Command Summary")
 
 **NOTE:** The `preload` command is not used in this example but may be beneficial when more ontologies are referenced to decrease processing time of the `process` command.
 
